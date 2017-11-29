@@ -1,5 +1,4 @@
 import Game.ComputerGame;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,7 +11,11 @@ public class Cart {
     private Random rnd = new Random();
 
     public Cart(){
-        this.games = games;
+        this.games = new ArrayList<>();
+    }
+
+    public List<ComputerGame> getGames() {
+        return games;
     }
 
     public boolean ship(){
@@ -56,5 +59,11 @@ public class Cart {
         return deliveryMethods.get(rnd.nextInt(deliveryMethods.size()));
     }
 
+    public boolean isShipped() {
+        return shipped;
+    }
 
+    public int getTotalPrice() {
+        return totalPrice;
+    }
 }
